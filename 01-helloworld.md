@@ -235,7 +235,9 @@ func getLocation(name: String, latitude: Double, longitude: Double) {
 }
 
 print(getLocation(name : name, latitude : latitude, longitude : longitude)
+```
 
+```swift
 
 // With structure: Instead of creating 3 separate variables, we create 1 variable containing all 3 variables
 struct userLocation {
@@ -352,8 +354,9 @@ class Parent {
 var p = Parent()
 p.parentMethod()
 p.getName()         // "Parent Name"
+```
 
-
+```swift
 // Child
 class Child : Parent {
   func childMethod() {

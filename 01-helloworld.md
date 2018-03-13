@@ -204,3 +204,115 @@ for i in 1...10 {
 ```
 
 ## Functions
+* Set of statements organised to perform specific task
+
+```swift
+// Specify the datatype for parameters
+func add(num1 : Int, num2 : Int) {
+  print(num1 + num2)
+}
+
+// Specify the datatype to return using ->
+func multiply(num1 : Int, num2 : Int) -> Int {
+  return num1 * num2
+}
+
+var total = add(1, 2)
+print(multiply(10, 2))
+```
+
+## Structures
+* Encapsulate data by grouping together certain variables
+
+```swift
+// Without structure
+var name = "Hello"
+var latitude = 41.123
+var longitude = 42.123
+
+func getLocation(name: String, latitude: Double, longitude: Double) {
+  print(name)
+}
+
+print(getLocation(name, latitude, longitude)
+
+
+// With structure: Instead of creating 3 separate variables, we create 1 variable containing all 3 variables
+struct userLocation {
+  var name : String
+  var latitude : Double
+  var longitude : Double
+}
+
+var location = userLocation("Hello", 41.123, 42.123)
+var name = location.name
+var latitude = location.latitude
+var longitude = location.longitude
+
+func getLocation(location : userLocation) {
+  print(location.name)
+}
+
+print(getLocation(location)
+```
+
+## Enum
+* Set of constant data (e.g. days of the week)
+
+```swift
+enum Direction {
+  case North
+  case South
+  case East
+  case West
+}
+
+// Without enum
+var dir = "North"
+
+// With enum
+var dir = Direction.North
+```
+
+* Enumeration with Switch
+```swift
+switch dir {
+  case Direction.North : {
+      print("Go forward")
+  }
+
+  case Direction.South : {
+      print("Go backward")
+  }
+  
+  case Direction.East : {
+    print("Go right")
+  }
+  
+  case Direction.West : {
+    print("Go left")
+  }
+  
+  // No need default case - with enumeration, we only have 4 possible cases
+}
+
+// Raw value concept
+enum Direction : String {
+  case North = "Go forward"
+  case South = "Go backward"
+  case East = "Go right"
+  case West = "Go left"
+}
+
+var dir = Direction.North   // North
+dir.rawValue                // "Go forward"
+```
+
+## Classes and Objects
+
+```swift
+
+```
+
+
+## Inheritance and Overriding

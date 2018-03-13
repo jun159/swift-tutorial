@@ -91,3 +91,113 @@ newArr.append(10)
 ```
 
 ## Dictionaries
+* Key-value pairs (keys are all unique)
+* Required for JSON etc that is uses key-value pairs
+
+```swift
+var myDict = ["blue": "water", "green":"land"]
+print(myDict)
+print(myDict["blue"])         // Optional: Swift doesn't know if this key exist, do not throw error if doesn't exist
+print(myDict["blue"]!)        // Confirm that this key exist, throws error if doesn't exist
+
+myDict["blue"]                // Get value: water
+myDict.count                  // Size
+myDict["blue"] = "ocean"      // Update new value
+myDict["red"] = "bridge"      // Add new value
+myDict.removeValue("red")     // Remove a value
+myDict.removeAll()            // Remove all
+```
+
+## For Loops
+* Takes the range (inclusive of last)
+
+```swift
+for i in 1...10 {
+  print(i)        // Prints 1 2 3 4 5 6 7 8 9 10
+}
+
+// Multiples 
+for num in stride(5, 50, 5) {
+  print(num)      // Prints multiples of 5
+}
+
+for num in stride(50, 5, -5) {
+  print(num)      // Prints multiples of 5
+}
+
+// Iterate array
+var shoppingList = ["Apples", "Oranges", "Bananas"]
+for item in shoppingList {
+  print(item)       // Print: Apples Oranges Bananas
+}
+
+// Iterate dictionaries
+var myDict = ["blue": "water", "green":"land"]
+for item in myDict {
+  print(item)        // Print: {key: "blue", value: "water"} {key: "green", value: "land"}
+  print(item.key)    // Print keys: blue green
+}
+
+for (index, value) in shoppingList.enumerated {
+  print(index)      // Prints: 0 Apples 1 Oranges 2 Bananas
+  print(value)
+}
+```
+
+## While Loops
+* Always run until condition is false
+
+```swift
+var counter = 0
+
+// Normal while loop
+while counter < 10 {
+  print(counter)
+  counter += 1
+}
+
+// Repeat while loop
+repeat {
+  print(counter)
+  counter += 1
+} while counter < 10
+```
+
+## Switch Statements
+* Prevent many if-else statements
+
+```swift
+var age = 10
+
+switch age {
+  case 14 : {
+    print("You are 14")
+  }
+  
+  case 16 : {
+    print("You are 16")
+  }
+  
+  default : {
+    print("Not sure how old you are")
+  }
+}
+```
+
+## Loop Control Statements
+
+```swift
+for i in 1...10 {
+  print(i)
+  if i == 5 { 
+    break     // Terminates loop
+  }
+}
+
+for i in 1...10 {
+  if i == 5 || i == 6 { 
+    continue    // Skips printing 5 and 6
+  }
+  print(i)
+}
+```

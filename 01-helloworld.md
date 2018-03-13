@@ -360,7 +360,7 @@ class Child : Parent {
     print("Child")
   }
   
-  // Must mention "override", else it will still print "Parent"
+  // Must mention "override", else error
   override func getName() {
     print("Child Name")
   }

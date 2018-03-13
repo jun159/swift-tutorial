@@ -217,8 +217,8 @@ func multiply(num1 : Int, num2 : Int) -> Int {
   return num1 * num2
 }
 
-var total = add(1, 2)
-print(multiply(10, 2))
+var total = add(num1 : 1, num2 : 2)
+print(multiply(num1 : 10, num2 : 2))
 ```
 
 ## Structures
@@ -234,7 +234,7 @@ func getLocation(name: String, latitude: Double, longitude: Double) {
   print(name)
 }
 
-print(getLocation(name, latitude, longitude)
+print(getLocation(name : name, latitude : latitude, longitude : longitude)
 
 
 // With structure: Instead of creating 3 separate variables, we create 1 variable containing all 3 variables
@@ -244,16 +244,16 @@ struct userLocation {
   var longitude : Double
 }
 
-var location = userLocation("Hello", 41.123, 42.123)
+var location = userLocation(name : "Hello", latitude : 41.123, longitude : 42.123)
 var name = location.name
 var latitude = location.latitude
 var longitude = location.longitude
 
-func getLocation(location : userLocation) {
-  print(location.name)
+func getLocation(loc : userLocation) {
+  print(loc.name)
 }
 
-print(getLocation(location)
+print(getLocation(loc : location))
 ```
 
 ## Enum
@@ -311,8 +311,63 @@ dir.rawValue                // "Go forward"
 ## Classes and Objects
 
 ```swift
+class Person {
+  var name : String
+  var age : Int
+  
+  init(name : String, age : Int) {
+    self.name = name
+    self.age = age
+  }
+  
+  func greeting() {
+    print("Name: " + self.name + ", Age: " + self.age")
+    print("Name: \(self.name), Age: \(self.age)")
+  }
+}
 
+var person = Person(name : "Hello", age : 10)
+var name = person.name
+var age = person.age
+
+person.greeting()
 ```
 
-
 ## Inheritance and Overriding
+* Inheritance: Inherit all methods from parent class
+* Overriding: Override parent class method
+
+```swift
+// Parent
+class Parent {
+  func parentMethod() {
+    print("Parent")
+  }
+  
+  func getName() {
+    print("Parent Name")
+  }
+}
+
+var p = Parent()
+p.parentMethod()
+p.getName()         // "Parent Name"
+
+
+// Child
+class Child : Parent {
+  func childMethod() {
+    print("Child")
+  }
+  
+  // Must mention "override", else it will still print "Parent"
+  override func getName() {
+    print("Child Name")
+  }
+}
+
+var c = Child()
+c.childMethod()
+c.parentMethod()    // Also works
+c.getName()         // "Child Name"
+```

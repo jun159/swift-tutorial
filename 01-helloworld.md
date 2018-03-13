@@ -164,7 +164,7 @@ repeat {
 ```
 
 ## Switch Statements
-* Prevent many if-else statements
+* Alternative for if-else statements
 
 ```swift
 var age = 10
@@ -185,6 +185,7 @@ switch age {
 ```
 
 ## Loop Control Statements
+* Terminate or skip loop
 
 ```swift
 for i in 1...10 {
@@ -201,3 +202,5 @@ for i in 1...10 {
   print(i)
 }
 ```
+
+## Functions
